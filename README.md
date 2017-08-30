@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/NathanTCz/packer-binary.svg?branch=master)](https://travis-ci.org/NathanTCz/packer-binary)
+[![Coverage Status](https://coveralls.io/repos/github/NathanTCz/packer-binary/badge.svg?branch=master)](https://coveralls.io/github/NathanTCz/packer-binary?branch=master)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/github/NathanTCz/packer-binary/master)
+
 # Packer::Binary
 
 A gem to install and interface with HashiCorp's Packer utility
