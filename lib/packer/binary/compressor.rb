@@ -26,7 +26,7 @@ module Packer
         end
 
         def extract(input_file, output_dir)
-          Zip::File.open(input_file) do |zip_file|
+          Zip::ZipFile.open(input_file) do |zip_file|
             # Handle entries one by one
             zip_file.each do |entry|
               # Extract to file/directory/symlink
