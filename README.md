@@ -1,6 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/packer-binary.svg)](https://badge.fury.io/rb/packer-binary)
 [![Build Status](https://travis-ci.org/NathanTCz/packer-binary.svg?branch=master)](https://travis-ci.org/NathanTCz/packer-binary)
 [![Coverage Status](https://coveralls.io/repos/github/NathanTCz/packer-binary/badge.svg?branch=master)](https://coveralls.io/github/NathanTCz/packer-binary?branch=master)
-[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/github/NathanTCz/packer-binary/master)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/gems/packer-binary/0.1.0)
 
 # Packer::Binary
 
