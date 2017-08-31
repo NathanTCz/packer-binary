@@ -19,7 +19,7 @@ module Packer
         # Zip the input directory.
         def write(input_dir, output_file)
           entries = Dir.entries(input_dir); entries.delete("."); entries.delete("..")
-          io = Zip::ZipFile.open(output_file, Zip::ZipFile::CREATE);
+          io = Zip::File.open(output_file, Zip::File::CREATE);
 
           write_entries(entries, "", io, input_dir, output_file)
           io.close();
@@ -49,7 +49,7 @@ module Packer
             if  File.directory?(disk_file_path)
               io.mkdir(zip_file_path)
               subdir =Dir.entries(disk_file_path); subdir.delete("."); subdir.delete("..")
-              write_entries(subdir, zip_file_path, io)
+              write_entries(subdir, zip_file_path, io, input_dir, output_file)
             else
               io.get_output_stream(zip_file_path) { |f| f.puts(File.open(disk_file_path, "rb").read())}
             end
