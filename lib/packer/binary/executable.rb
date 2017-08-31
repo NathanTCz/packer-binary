@@ -5,8 +5,9 @@ module Packer
 
       def initialize
         @packer_version = Packer::Binary.config.version
-        @download_path = "#{Packer::Binary.config.download_path}/packer-binary/#{@packer_version}/bin"
+        @download_path = "#{Packer::Binary.config.download_path.chomp('/')}/packer-binary/#{@packer_version}/bin"
         @download_filename = "#{@packer_version}-packer.zip"
+
         FileUtils.mkdir_p @download_path
 
         raise 'Your OS is not supported' unless supported?
