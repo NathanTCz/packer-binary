@@ -24,5 +24,13 @@ module Packer
     it 'configures options' do
       expect(Packer::Binary.config.download_path).equal? '/tmp/tests'
     end
+
+    it 'maps dymanic methods to binary sub-commands' do
+      expect(Packer::Binary.version).to eq true
+    end
+
+    it 'throws CommandFailure on invalid sub-command' do
+      expect { Packer::Binary.versions } .to raise_error Packer::Binary::Command::CommandFailure
+    end
   end
 end
