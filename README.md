@@ -1,7 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/packer-binary.svg)](https://badge.fury.io/rb/packer-binary)
 [![Build Status](https://travis-ci.org/NathanTCz/packer-binary.svg?branch=master)](https://travis-ci.org/NathanTCz/packer-binary)
 [![Coverage Status](https://coveralls.io/repos/github/NathanTCz/packer-binary/badge.svg?branch=master)](https://coveralls.io/github/NathanTCz/packer-binary?branch=master)
-[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://www.rubydoc.info/gems/packer-binary/0.1.0)
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/packer-binary)
 
 # Packer::Binary
 
@@ -35,18 +35,14 @@ Packer::Binary.configure do |config|
 end
 ```
 
-### Convenience Methods
-{Packer::Binary.Build} - Run the `build` command. Optionally pass any arguments supported by Packer.
+### Dynamic Methods
+The {Packer::Binary} module will automagically map method calls to `packer` commands. This serves to better support future versions of `packer` and potentially new commands. For example, the equivalent of `packer build test.json` in Ruby:
 
-{Packer::Binary.Fix} - Run the `fix` command. Optionally pass any arguments supported by Packer.
+```ruby
+Packer::Binary.build('test.json')
+```
 
-{Packer::Binary.Inspect} - Run the `inspect` command. Optionally pass any arguments supported by Packer.
-
-{Packer::Binary.Push} - Run the `push` command. Optionally pass any arguments supported by Packer.
-
-{Packer::Binary.Validate} - Run the `validate` command. Optionally pass any arguments supported by Packer.
-
-{Packer::Binary.Version} - Run the `version` command. Optionally pass any arguments supported by Packer.
+If you call a method not supported by the `packer` binary, you will get a {Packer::Binary::Command::CommandFailure} exception.
 
 ## Development
 
