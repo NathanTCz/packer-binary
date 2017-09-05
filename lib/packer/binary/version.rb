@@ -1,7 +1,7 @@
 module Packer
   module Binary
     # Gem Version
-    VERSION = '0.2.0'.freeze
+    VERSION = '0.2.1'.freeze
 
     # The version number of the Packer binary to download and use
     PACKER_VERSION = '1.0.4'.freeze
