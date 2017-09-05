@@ -1,8 +1,10 @@
 require 'bundler/setup'
-require 'packer/binary'
 
+# Coverage needs to be included before the rest of the source
 require 'coveralls'
 Coveralls.wear!
+
+require 'packer/binary'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
