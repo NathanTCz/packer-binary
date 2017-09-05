@@ -12,6 +12,7 @@ module Packer
   # The Binary namespace handles sub-commands using {#method_missing} metaprogramming
   # as well as the global configuration object
   module Binary
+
     # @!attribute config
     #   @return [Configuration] the global configuration object
     attr_writer :config
@@ -40,7 +41,7 @@ module Packer
     # @since 0.2.0
     def method_missing(method, *args, &block)
       if method.to_s =~ /(\w+)/
-        puts "#{method.to_s.downcase} #{args.join(' ')}"
+        Packer::Binary::Helpers.debug("#{method.to_s.downcase} #{args.join(' ')}")
         Command.run("#{method.to_s.downcase} #{args.join(' ')}")
       else
         super

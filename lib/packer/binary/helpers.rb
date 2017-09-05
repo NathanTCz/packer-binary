@@ -26,8 +26,6 @@ module Packer
         stdout.print("#{message}\n") if ENV['DEBUG']
       end
 
-      private
-
       def stdout
         $stdout
       end
