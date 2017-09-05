@@ -1,0 +1,6 @@
+inherit_from:
+  - .rubocop_todo.yml
+
+Style/MethodName:
+  Exclude:
+    - lib/packer/binary.rb
