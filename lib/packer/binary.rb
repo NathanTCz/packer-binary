@@ -40,7 +40,8 @@ module Packer
     # @since 0.2.0
     def method_missing(method, *args, &block)
       if method.to_s =~ /(\w+)/
-        Command.run("#{method.to_s.downcase} #{args}")
+        puts "#{method.to_s.downcase} #{args.join(' ')}"
+        Command.run("#{method.to_s.downcase} #{args.join(' ')}")
       else
         super
       end
@@ -50,29 +51,13 @@ module Packer
       method =~ /(\w+)/ || super
     end
 
+    # The Convenience methods have been deprecated in favor of dynamic method
+    # handling.
     # @deprecated Use {#method_missing} dynamic method handling for
     #   binary sub-commands
-    def Build; end
-
-    # @deprecated Use {#method_missing} dynamic method handling for
-    #   binary sub-commands
-    def Fix; end
-
-    # @deprecated Use {#method_missing} dynamic method handling for
-    #   binary sub-commands
-    def Inspect; end
-
-    # @deprecated Use {#method_missing} dynamic method handling for
-    #   binary sub-commands
-    def Push; end
-
-    # @deprecated Use {#method_missing} dynamic method handling for
-    #   binary sub-commands
-    def Validate; end
-
-    # @deprecated Use {#method_missing} dynamic method handling for
-    #   binary sub-commands
-    def Version; end
+    def Version
+      Command.run('version')
+    end
 
     # This class holds the global configuration items
     class Configuration
